@@ -31,6 +31,9 @@ export default function Home() {
       ) {
         toast.info("User Already Exists, Redirecting To Form Page...");
         router.push("/form");
+      } else {
+        toast.success("Successful , Redirecting To Form Page...");
+        router.push("/form");
       }
     } catch (error) {
       toast.error("Error");
@@ -52,7 +55,7 @@ export default function Home() {
             value={rollNo}
             onChange={(e) => setRollNo(e.target.value)}
             placeholder="Enter your roll number (Eg. RA22..)"
-            className=" border border-gray-200 rounded-xl focus-visible:ring-1 focus-visible:ring-blue-500 outline-none "
+            className=" border border-gray-400 rounded-xl focus-visible:ring-1 focus-visible:ring-blue-500 outline-none "
             disabled={loading}
           />
         </div>
@@ -62,7 +65,7 @@ export default function Home() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name (Eg. Subramanian)"
-            className=" border border-gray-200 rounded-xl focus-visible:ring-1 focus-visible:ring-blue-500 outline-none "
+            className=" border border-gray-400 rounded-xl focus-visible:ring-1 focus-visible:ring-blue-500 outline-none "
             disabled={loading}
           />
         </div>
