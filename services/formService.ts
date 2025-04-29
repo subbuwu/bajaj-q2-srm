@@ -1,3 +1,5 @@
+import { FormResponse } from "@/types/Form";
+
 const baseUrl = "https://dynamic-form-generator-9rl7.onrender.com";
 
 export const createUser = async (rollNum: string, name: string) => {
@@ -17,7 +19,10 @@ export const createUser = async (rollNum: string, name: string) => {
   return { data, resStatus };
 };
 
-export const getFormDetails = async (rollNum: string) => {
+export const getFormDetails = async (
+  rollNum: string
+): Promise<FormResponse> => {
   const res = await fetch(`${baseUrl}/get-form?rollNumber=${rollNum}`);
   const data = await res.json();
+  return data;
 };

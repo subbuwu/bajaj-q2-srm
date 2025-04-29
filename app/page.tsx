@@ -21,12 +21,13 @@ export default function Home() {
     }
     setLoading(true);
     try {
+      localStorage.setItem("rollNum", rollNo);
       const { data, resStatus } = await createUser(rollNo, name);
       console.log(data);
       if (
-        (data.message =
+        data.message ==
           "User already exists. Fetch /get-form to get form json" ||
-          resStatus == 409)
+        resStatus == 409
       ) {
         toast.info("User Already Exists, Redirecting...");
         router.push("/form");
