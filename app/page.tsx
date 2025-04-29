@@ -29,7 +29,7 @@ export default function Home() {
           "User already exists. Fetch /get-form to get form json" ||
         resStatus == 409
       ) {
-        toast.info("User Already Exists, Redirecting...");
+        toast.info("User Already Exists, Redirecting To Form Page...");
         router.push("/form");
       }
     } catch (error) {
